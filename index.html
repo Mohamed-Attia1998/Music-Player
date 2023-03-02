@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+<link rel="shortcut icon" href="imgs/icon.jpg" type="image/x-icon">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;700&family=Montserrat:wght@100;200;400;600;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700&family=Sassy+Frass&display=swap" rel="stylesheet">    <link rel="stylesheet" href="css/all.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,300;1,400;1,500&family=Cairo:wght@200;300;400;500;700&family=Itim&family=Montserrat:wght@100;200;400;600;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700&family=Sassy+Frass&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="player">
+        <div class="wrapper">
+            <div class="detials">
+                <div class="track-art"></div>
+                <div class="track-name">Track Name</div>
+                <div class="track-artist">Track Artist</div>
+            </div>
+            <div class="slider_container">
+                <div class="current-time">00:00</div>
+                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                <div class="total-duration">00:00</div>
+            </div>
+            <div class="slider_container">
+                <i class="fa fa-volume-down volume_down" onclick="mute()"></i>
+                <input type="range" min="0" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                <i class="fa fa-volume-up volume_up" onclick=" unMute()"></i>
+            </div>
+            <div class="buttons">
+                <div class="random-track" onclick="randomTrack()" title="Random">
+                    <i class="fas fa-random fa-2x" title="random"></i>
+                </div>
+                <div class="prev-track" onclick="prevTrack()" title="Previous">
+                    <i class="fa fa-step-backward fa-2x"></i>
+                </div>
+                <div class="playpause-track" onclick="playPauseTrack()" title="Play">
+                    <i class="fa fa-play-circle fa-5x"></i>
+                </div>
+                <div class="next-track" onclick="nextTrack()" title="Next">
+                    <i class="fa fa-step-forward fa-2x"></i>
+                </div>
+                <div class="repeat-track" onclick="repeatTrack()" title="Repeat">
+                    <i class="fa-solid fa-rotate-right fa-2x"></i>
+                    </div>
+            </div>
+            <div id="wave">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
